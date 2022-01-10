@@ -63,13 +63,9 @@
     <script>
 
         // new: instancia uma classe
-        var n1 = new Negociacao();
-        n1.quantidade = 20;
-        console.log(n1);
-
-        var n2 = new Negociacao();
-        console.log(n2);
-
+        var n1 = new Negociacao(new Date, 5, 700);
+        var volume = n1.obtemVolume();
+        console.log(volume);
     </script>
 </body>
 </html>

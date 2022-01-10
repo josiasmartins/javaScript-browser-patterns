@@ -1,11 +1,17 @@
 class Negociacao {
     // constructor: defina os atriutos da classe
-    constructor() {
+    // posso receber parâmetros e passar no atributo da classe
+    constructor(data, quantidade, valor) {
         // Date: data em javaScript
         //  this: é uma variável implicita que sempre aponta
         // para a instancia que esta executando a operação naquele momento
-        this.data = new Date();
-        this.quantidade = 1;
-        this.valor = 0.0;
+        this.data = data;
+        this.quantidade = quantidade;
+        this.valor = valor;
     } 
+
+    obtemVolume() {
+
+        return this.quantidade * this.valor
+    }
 }
