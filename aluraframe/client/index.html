@@ -64,16 +64,13 @@
 
         // new: instancia uma classe
         var n1 = new Negociacao(new Date(), 5, 700);
-        console.log(Object.isFrozen(n1))
-        // freeze: método que congela o objeto para não alterar as proprieedades da minha instancia
-        Object.freeze(n1);
-        console.log(Object.isFrozen(n1))
-        n1._quantidade = 1000000;
-        n1.quantidade = 1000;
-        console.log(n1.quantidade);
         console.log(n1.data);
-        console.log(n1.valor);
-        console.log(n1.volume);
+        // setDate: muda o dia
+        n1.data.setDate(11);
+
+        console.log(n1.data);
+
+
     </script>
 </body>
 </html>
