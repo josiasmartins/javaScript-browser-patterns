@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #fff;
+    --secundary-color: #212121;
+}
+
+.dark-theme {
+    --primary-color: #000106;
+    --secundary-color: #fff;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+}
