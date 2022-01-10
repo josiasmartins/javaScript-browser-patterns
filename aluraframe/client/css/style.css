@@ -1,14 +1,46 @@
 :root {
     --primary-color: #fff;
     --secundary-color: #212121;
+    --ternary-color: rgb(9, 187, 9);
+    --quaternary-color: white;
 }
 
 .dark-theme {
-    --primary-color: #000106;
+    --primary-color: rgb(13, 17, 23);
     --secundary-color: #fff;
+    --ternary-color: rgb(101, 9, 187);
+    --quaternary-color: rgb(22, 27, 34)
 }
 
 body {
     background-color: var(--primary-color);
     color: var(--secundary-color);
+}
+
+.button {
+    display: flex;
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 0.5rem 0.5rem;
+    color: var(--ternary-color);
+    background: black;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+.button:hover {
+    color: orangered;
+    background: black;
+    border: 1px solid gray
+}    
+
+.form {
+    color: var(--ternary-color);
+}
+
+table {
+    color: var(--ternary-color);
+}
+
+.form-group input {
+    background: var(--quaternary-color);
 }
