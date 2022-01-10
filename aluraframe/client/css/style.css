@@ -28,7 +28,7 @@ body {
     border: 1px solid gray;
 }
 .button:hover {
-    color: orangered;
+    color: #ff4321;
     background: black;
     border: 1px solid gray
 }    
@@ -43,4 +43,8 @@ table {
 
 .form-group input {
     background: var(--quaternary-color);
+}
+
+h1 {
+    color: var(--ternary-color);
 }
