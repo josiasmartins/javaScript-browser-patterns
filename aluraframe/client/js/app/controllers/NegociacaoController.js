@@ -16,7 +16,16 @@ class NegociacaoController {
         
         // '2016-11-12'
         // replace: nesse caso, troca todas as '-' por virgula
-        let data = new Date(this._inputData.value.replace(/-/g, ','));
+        let data = new Date(
+            // spred operators: ele pega a primeira posição do array e primeiro parâmetro do constructor...até no terceiro.
+            ...this._inputData.value
+                .split('-')
+                // map: percorre o array e cria um novo array
+                // segundo parametro: o indece do elemento que está percorrendos
+                .map(function(item, indece) {
+                     return item - indece % 2;
+                    })
+            );
         console.log(data)
 
         console.log(this._inputData.value);
