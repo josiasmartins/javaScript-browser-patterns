@@ -22,14 +22,16 @@ class NegociacaoController {
                 .split('-')
                 // map: percorre o array e cria um novo array
                 // segundo parametro: o indece do elemento que está percorrendos
-                .map(function(item, indece) {
-                     return item - indece % 2;
-                    })
+                // arrow function: como só tem uma instrução, ela jã faz o retorno dessa operação
+                .map((item, indece) => item - indece % 2)
             );
-        console.log(data)
 
-        console.log(this._inputData.value);
-        console.log(negociacao);
-         // adicionar a negociacao em uma lista
+            let negociacao = new Negociacao(
+                data, 
+                this._inputQuantidade,
+                this._inputValor
+            );
+
+            console.log(negociacao);
     }
 }
