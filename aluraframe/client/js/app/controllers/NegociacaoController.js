@@ -15,15 +15,13 @@ class NegociacaoController {
         // TODO: erro no preventDeafult
         event.preventDefault();
 
-        let helper = new DateHelper();
-
         let negociacao = new Negociacao(
-            helper.textoParaData(this._inputData.value),
+            DateHelper.textoParaData(this._inputData.value),
             this._inputQuantidade,
             this._inputValor
         );
 
-        console.log(helper.dataParaTexto(negociacao.data));
+        console.log(DateHelper.dataParaTexto(negociacao.data));
     }
 
 }
