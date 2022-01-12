@@ -1,3 +1,4 @@
+
 class NegociacaoController {
 
     constructor() {
@@ -32,10 +33,35 @@ class NegociacaoController {
                 this._inputValor
             );
 
-            console.log(negociacao);
+            // getDate: retorna o dia da data; getMouth: retorna o mes e getFullYear: retorna o ano completo
+            let diaMesAno = negociacao.data.getDate() 
+            + '/' + (negociacao.data.getMonth() + '/' + 1)
+             + negociacao.data.getFullYear();
+            console.log(diaMesAno)
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function somaDoisNumber(num1, num2) {
     return num1 + num2;
