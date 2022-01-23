@@ -8,6 +8,7 @@ class NegociacaoController {
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
+        this._listaNegociacoes = new ListaNegociacoes();
     }
 
     adiciona(event) {
@@ -15,13 +16,29 @@ class NegociacaoController {
         // TODO: erro no preventDeafult
         event.preventDefault();
 
-        let negociacao = new Negociacao(
-            DateHelper.textoParaData(this._inputData.value),
-            this._inputQuantidade,
-            this._inputValor
-        );
-
+        this._listaNegociacoes.adiciona(this._criaNegociacao());
+        this._cleanForm();
+        console.log(this._listaNegociacoes.negociacoes);
         console.log(DateHelper.dataParaTexto(negociacao.data));
+    }
+
+    _criaNegociacao() {
+
+        return new Negociacao(
+            DateHelper.textoParaData(this._inputData.value),
+            this._inputQuantidade.value,
+            this._inputValor.value
+        );
+    }
+
+    _cleanForm() {
+        // reseta o formuulário
+        this._inputData.value = '';
+        this._inputValor.value = 0;
+        this._inputQuantidade.value = 0.0;
+
+        // focus: ganha o focus nesse input
+        this._inputData.focus();
     }
 
 }
