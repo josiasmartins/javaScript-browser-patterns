@@ -11,6 +11,8 @@ class ListaNegociacoes {
 
     // getter: somente leitura
     get negociacoes() {
-        return this._negociacoes;
+        // programação defensiva
+        // combina dois array e retorna o array modificado
+        return [].concat(this._negociacoes);
     }
 }

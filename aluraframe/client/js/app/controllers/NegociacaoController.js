@@ -18,8 +18,10 @@ class NegociacaoController {
 
         this._listaNegociacoes.adiciona(this._criaNegociacao());
         this._cleanForm();
-        console.log(this._listaNegociacoes.negociacoes);
-        console.log(DateHelper.dataParaTexto(negociacao.data));
+
+        this._listaNegociacoes.negociacoes.length = 0;
+
+        console.log(this._listaNegociacoes.negociacoes.length = 0)
     }
 
     _criaNegociacao() {
