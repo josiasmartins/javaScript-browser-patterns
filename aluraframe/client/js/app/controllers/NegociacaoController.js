@@ -1,3 +1,4 @@
+
 class NegociacaoController {
 
     constructor() {
@@ -7,35 +8,63 @@ class NegociacaoController {
         this._inputData = $('#data');
         this._inputQuantidade = $('#quantidade');
         this._inputValor = $('#valor');
+        this._listaNegociacoes = new ListaNegociacoes();
     }
 
     adiciona(event) {
         // cancela a submissão do formulário
         // TODO: erro no preventDeafult
         event.preventDefault();
-        
-        // '2016-11-12'
-        // replace: nesse caso, troca todas as '-' por virgula
-        let data = new Date(
-            // spred operators: ele pega a primeira posição do array e primeiro parâmetro do constructor...até no terceiro.
-            ...this._inputData.value
-                .split('-')
-                // map: percorre o array e cria um novo array
-                // segundo parametro: o indece do elemento que está percorrendos
-                // arrow function: como só tem uma instrução, ela jã faz o retorno dessa operação
-                .map((item, indece) => item - indece % 2)
-            );
 
-            let negociacao = new Negociacao(
-                data, 
-                this._inputQuantidade,
-                this._inputValor
-            );
+        this._listaNegociacoes.adiciona(this._criaNegociacao());
+        this._cleanForm();
 
-            console.log(negociacao);
+        this._listaNegociacoes.negociacoes.length = 0;
+
+        console.log(this._listaNegociacoes.negociacoes.length = 0)
+    }
+
+    _criaNegociacao() {
+
+        return new Negociacao(
+            DateHelper.textoParaData(this._inputData.value),
+            this._inputQuantidade.value,
+            this._inputValor.value
+        );
+    }
+
+    _cleanForm() {
+        // reseta o formuulário
+        this._inputData.value = '';
+        this._inputValor.value = 0;
+        this._inputQuantidade.value = 0.0;
+
+        // focus: ganha o focus nesse input
+        this._inputData.focus();
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function somaDoisNumber(num1, num2) {
     return num1 + num2;
@@ -72,7 +101,7 @@ let avaliacoes = [
 
 
 let aprovados = avaliacoes
-    .filter(prova => prova.nota >= 7 )
+    .filter(prova => prova.nota >= 7)
     .map(prova => prova.aluno.nome);
 console.log(aprovados)
 
