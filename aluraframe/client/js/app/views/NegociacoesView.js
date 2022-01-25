@@ -1,0 +1,53 @@
+class NegociacoesView {
+
+    constructor(elemento) {
+
+        this._elemento = elemento;
+    }
+
+  _template() {
+      // retorna uma template string
+    return `
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>DATA</th>
+                    <th>QUANTIDADE</th>
+                    <th>VALOR</th>
+                    <th>VOLUME</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            </tbody>
+            
+            <tfoot>
+            </tfoot>
+        </table>
+        `;
+  }
+
+  update() {
+      // innerHTML: se passar uma string HTML, ele converte essa string em elementos do DOM
+      this._elemento.innerHTML = this._template();
+  }
+}
+
+/** 
+ *    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>DATA</th>
+                <th>QUANTIDADE</th>
+                <th>VALOR</th>
+                <th>VOLUME</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        </tbody>
+        
+        <tfoot>
+        </tfoot>
+    </table>
+*/
