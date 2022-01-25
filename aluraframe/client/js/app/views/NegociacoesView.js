@@ -5,7 +5,7 @@ class NegociacoesView {
         this._elemento = elemento;
     }
 
-  _template() {
+  _template(model) {
       // retorna uma template string
     return `
         <table class="table table-hover table-bordered">
@@ -19,6 +19,16 @@ class NegociacoesView {
             </thead>
             
             <tbody>
+                ${model.negociacoes.map(n => 
+                     `
+                        <tr>
+                            <td>${DateHelper.dataParaTexto(n.data)}</td>
+                            <td>${n.quantidade}</td>
+                            <td>${n.valor}</td>
+                            <td>${n.volume}</td>
+                        </tr>
+                    `
+                ).join('')}
             </tbody>
             
             <tfoot>
@@ -27,9 +37,9 @@ class NegociacoesView {
         `;
   }
 
-  update() {
+  update(model) {
       // innerHTML: se passar uma string HTML, ele converte essa string em elementos do DOM
-      this._elemento.innerHTML = this._template();
+      this._elemento.innerHTML = this._template(model);
   }
 }
 
