@@ -64,3 +64,33 @@ class NegociacoesView {
         </tfoot>
     </table>
 */
+
+
+
+function somatoria(array) {
+
+    var resultado = 0;
+    for (let i = 0; i < array.length; i++) {
+        resultado = array[i] + resultado;
+    }
+
+    return resultado;
+}
+
+function somatoriaFor(array) {
+    let resultado = 0;
+    array.forEach(item => resultado+= item);
+    return resultados;
+}
+
+numeros.reduce((total, num) => total * num, 1);
+
+let dobro = numeros.map(function(num) {
+    return num * 2;
+});
+let metade = numeros.map(function(num) {
+    return num/2;
+});
+let raiz = numeros.map(function(num) {
+    return Math.sqrt(num);
+})
