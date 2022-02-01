@@ -13,6 +13,8 @@
     <h1 class="text-center">Negociações</h1>
     <button class="dark-theme button">dark mode</button>
     
+    <div id="mensagemView"></div>
+    
     <!-- onsubmit: é um evento -->
     <form class="form" onsubmit="negociacoController.adiciona(evetn)">
         
@@ -53,6 +55,7 @@
     <script src="js/app/models/ListaNegociacoes.js"></script>
     <script src="js/app/views/NegociacoesView.js"></script>
     <script src="js/app/models/Mensagem.js"></script>
+    <script src="js/app/views/MensagemView.js"></script>
     <script>
         let negociacoController = new NegociacaoController();
         console.log(negociacoController.adiciona());
