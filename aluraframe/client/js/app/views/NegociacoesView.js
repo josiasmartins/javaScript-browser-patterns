@@ -1,8 +1,11 @@
-class NegociacoesView {
+class NegociacoesView extends View {
 
+    // constructor(elemento) {
+
+    //     this._elemento = elemento;
+    // }
     constructor(elemento) {
-
-        this._elemento = elemento;
+        super(elemento);
     }
 
   _template(model) {
@@ -40,10 +43,10 @@ class NegociacoesView {
         `;
   }
 
-  update(model) {
-      // innerHTML: se passar uma string HTML, ele converte essa string em elementos do DOM
-      this._elemento.innerHTML = this._template(model);
-  }
+//   update(model) {
+//       // innerHTML: se passar uma string HTML, ele converte essa string em elementos do DOM
+//       this._elemento.innerHTML = this._template(model);
+//   }
 }
 
 /** 
